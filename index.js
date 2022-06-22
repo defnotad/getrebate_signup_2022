@@ -61,10 +61,11 @@ app.get('/', async function (req, res) {
 });
 
 app.post('/', async function (req, res) {
+    console.log("started");
     email = req.body.email;
     mobile = '+91' + req.body.mobile;
     if (email == '' && mobile == '+91' && mobile.length != 12) {
-        // res.sendFile(__dirname + '/failure.html');
+        alert("Check details");
     }
     const check = await signups.where('mobile', '==', mobile).get();
 
@@ -74,10 +75,10 @@ app.post('/', async function (req, res) {
             email: email,
             date: Date(),
         }).then(function () {
-            // res.sendFile(__dirname + '/success.html');
+            alert("Done boys");
         });
     } else {
-        // res.sendFile(__dirname + '/failure.html');
+        alert("Something went wrong");
     }
 });
 
@@ -87,4 +88,4 @@ app.post("/failure", function (req, res) {
 
 
 // httpsServer.listen(httpsPort, hostname);
-app.listen(8080, function () {});
+app.listen(8080, function () { });
