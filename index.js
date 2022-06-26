@@ -110,7 +110,7 @@ const http = require("http");
 
 const hostname = 'www.getrebate.in';
 // const httpsPort = 443;
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -187,13 +187,7 @@ app.post("/failure", function (req, res) {
 
 
 // httpsServer.listen(httpsPort, hostname);
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World!\n');
-});
 
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.listen(PORT, () => console.log(`Server Running on Port ${PORT}`));
+
 // app.listen(8080, function () {});
