@@ -98,7 +98,7 @@ const bodyParser = require('body-parser');
 const admin = require('firebase-admin');
 const fs = require("fs");
 // const https = require("https");
-const http = require("http");
+// const http = require("http");
 
 // SSL
 
@@ -108,9 +108,9 @@ const http = require("http");
 
 // Create app
 
-const hostname = 'www.getrebate.in';
+// const hostname = 'www.getrebate.in';
 // const httpsPort = 443;
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -188,6 +188,6 @@ app.post("/failure", function (req, res) {
 
 // httpsServer.listen(httpsPort, hostname);
 
-app.listen(PORT, () => console.log(`Server Running on Port ${PORT}`));
+app.listen(8081, () => console.log(`Server Running on 8081`));
 
 // app.listen(8080, function () {});
